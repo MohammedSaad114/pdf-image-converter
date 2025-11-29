@@ -398,5 +398,8 @@ FodyWeavers.xsd
 *.sln.iml
 
 
-# Vendor 
-!vendor/Ghostscript/bin
+# allow Ghostscript vendor binaries
+!vendor/
+!vendor/Ghostscript/
+!vendor/Ghostscript/bin/
+!vendor/Ghostscript/bin/**

@@ -14,12 +14,10 @@ namespace Converter
         static void Main()
         {
 
-#if DEBUG
-            string root = Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory));
-            string ghostscriptPath = Path.Combine(root, @"..\..\vendor\Ghostscript\bin");
-#else
-            string ghostscriptPath = @"vendor\Ghostscript\bin\"; //the vendor should be copied to the release Folder
-#endif
+            var ghostscriptPath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "vendor", "Ghostscript", "bin"
+            );
 
             MagickNET.SetGhostscriptDirectory(ghostscriptPath);
 
